@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build:
+      context: .
+      args:
+        BACKEND_INTERNAL_URL: ${BACKEND_INTERNAL_URL:-http://localhost:8000}
+    container_name: documind-web
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
